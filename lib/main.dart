@@ -5,6 +5,7 @@ import 'package:flutter_application_1/pages/home_pagee.dart';
 import 'package:flutter_application_1/pages/login.dart';
 import 'package:flutter_application_1/pages/new_page.dart';
 import 'package:flutter_application_1/pages/ninjaid.dart';
+import 'package:flutter_application_1/pages/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LogIn(),
+      home: SignUp(),
     );
   }
 }

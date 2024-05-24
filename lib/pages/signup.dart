@@ -1,17 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LogIn extends StatefulWidget {
-  const LogIn({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<LogIn> createState() => _LogInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LogInState extends State<LogIn> {
+class _SignUpState extends State<SignUp> {
 
-  final TextEditingController controller=TextEditingController();
+  final TextEditingController controller = TextEditingController();
   String text='';
+  bool isChecked= false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +24,11 @@ class _LogInState extends State<LogIn> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                      const SizedBox(height: 40,),
-        
+                      const SizedBox(height: 50,),
+                      
+                      //SIGN UP TEXT
                       const Text(
-                        "Login",
+                        "Sign up",
                         style: TextStyle(
                           fontSize: 38,
                           fontWeight: FontWeight.w500,
@@ -34,10 +36,35 @@ class _LogInState extends State<LogIn> {
                         ),
                       ),
         
-                      const SizedBox(height: 25,),
-        
+                      const SizedBox(height: 30,),
+                      
+
+                      //ENTER NAME BOX
                       Container(
-                        height: 73,
+                        height: 48,
+                        width: 299,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 1,
+                            style: BorderStyle.solid,
+                          ),
+                          color: Colors.transparent,
+                        ),
+                        child: TextFormField(
+                                controller: controller,
+                                decoration: const InputDecoration(
+                                label: Center(child: Text("Enter your Full name")),
+                                ),
+                              ),
+                      ),
+        
+                      const SizedBox(height: 30,),
+                      
+                      //ENTER PHONE NUMBER BOX
+                      Container(
+                        height: 48,
                         width: 299,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -55,11 +82,11 @@ class _LogInState extends State<LogIn> {
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Text('+ 91',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                                const Text('+ 91',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
                                 Image.asset(
                                           'assets/india.png',
-                                          width: 30,
-                                          height: 18,
+                                          width: 25,
+                                          height: 12,
                                           fit:BoxFit.cover  
                                         ),
                               ],
@@ -73,30 +100,50 @@ class _LogInState extends State<LogIn> {
                               ),
                             ),
         
-                            const SizedBox(width: 5,),
+                            const SizedBox(width: 0,),
         
                             SizedBox(
-                              height: 100,
+                              height: 48,
                               width: 200,
                               child: TextFormField(
                                 controller: controller,
                                 decoration: const InputDecoration(
-                                labelText: 'Enter your Phone no.',
+                                label: Center(child: Text('Enter your Phone no.')),
                                 ),
                               ),
                             ),
-                      
-                            // Text('Enter your Phone no.', style: TextStyle(
-                            //   letterSpacing: 2,
-                            //   color: Colors.grey[400]
-                            // ),)
         
                           ],
                         ),
                       ),
+
+                      const SizedBox(height: 10,),
+
+
+                      //CheckBOX
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Checkbox(
+                            value: isChecked,
+                            activeColor: const Color.fromARGB(255, 188, 188, 188),
+                          onChanged: (newBool){
+                            setState(() {
+                              isChecked=newBool!;
+                            });
+                          }
+                          ),
+                          Text('I agree to all terms of services and privacy',
+                            style: TextStyle(
+                              color: Colors.grey[400],
+                            ),
+                          )
+                        ],
+                      ),
         
-                      const SizedBox(height: 35,),
-        
+                      const SizedBox(height: 10,),
+
+                      //CREATE ACCOUNT BUTTON
                       Container(
                         height: 42,
                         width: 147,
@@ -106,13 +153,13 @@ class _LogInState extends State<LogIn> {
                             color: Colors.black,
                             style: BorderStyle.solid,
                           ),
-                          color: const Color.fromARGB(255, 255, 0, 82),
+                          color: const Color.fromARGB(255, 188, 188, 188),
                         ),
-                        child: const Center(
+                        child: Center(
                           child: Text(
-                            'Send OTP',
+                            'Create Account',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.grey[500],
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
                             ),
@@ -124,7 +171,7 @@ class _LogInState extends State<LogIn> {
                         alignment: Alignment.center,
                         children: [
                               Divider(
-                              height: 100,
+                              height: 50,
                               color: Colors.grey[400],
                             ),
                             Container(
@@ -138,19 +185,7 @@ class _LogInState extends State<LogIn> {
                         ],
                       ),
         
-                      const SizedBox(height: 15,),
-        
-                      Container(
-                        height: 40,
-                        width: 249,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black, style: BorderStyle.solid),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Center(child: Text('Continue with Email', style: TextStyle(color: Colors.grey[600],letterSpacing: 1),)),
-                      ),
-        
-                      const SizedBox(height: 30,),
+                      const SizedBox(height: 40,),
         
                       Container(
                         height: 40,
@@ -171,14 +206,14 @@ class _LogInState extends State<LogIn> {
                       ),
         
                       const SizedBox(
-                        height: 200,
+                        height: 30,
                       ),
         
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text('New to our platform?',style: TextStyle(
+                          Text('Already a user ?',style: TextStyle(
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1,
                             fontSize: 13, 
@@ -186,7 +221,7 @@ class _LogInState extends State<LogIn> {
         
                           SizedBox(width: 2,),
         
-                          Text('Sign up',style: TextStyle(
+                          Text('login',style: TextStyle(
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1,
                             fontSize: 13,
@@ -194,9 +229,7 @@ class _LogInState extends State<LogIn> {
                           ),)
                         ],
                       ),
-        
-        
-        
+   
                 ],
             ),
           ),
