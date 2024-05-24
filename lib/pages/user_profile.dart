@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UserProfile extends StatefulWidget {
@@ -89,178 +90,180 @@ class _UserProfileState extends State<UserProfile> {
             //UPPER CONTAINER ENDS
         
             //LOWER CONTENT STARTS
-            Container(
-              height: 380,
-              width: 343,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(11),
-                color: Colors.grey[100],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-        
-                    //USER ID
-                    const Text('  User ID'),
-                    const SizedBox(height: 5,),
-                    Container(
-                            height: 45,
-                            width: 290,
+            Expanded(
+              child: Container(
+                height: 380,
+                width: 343,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(11),
+                  color: Colors.grey[100],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      
+                      //USER ID
+                      const Text('  User ID'),
+                      const SizedBox(height: 5,),
+                      Container(
+                              height: 45,
+                              width: 290,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(11),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                  style: BorderStyle.solid,
+                                ),
+                                color: Colors.transparent,
+                              ),
+                              child: TextFormField(
+                                      controller: controller,
+                                      decoration: const InputDecoration(
+                                      label: Text(" Enter User ID"),
+                                      ),
+                                    ),
+                            ),
+                      
+                      const SizedBox(height: 10,),
+                      
+                      //EMAIL
+                      const Text('  Email ID'),
+                      const SizedBox(height: 5,),
+                      Container(
+                        height: 45,
+                        width: 290,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(11),
+                          border: Border.all(
+                          color: Colors.black,
+                          width: 1,
+                          style: BorderStyle.solid,
+                          ),
+                          color: Colors.transparent,
+                        ),
+                        child: TextFormField(
+                                controller: controller,
+                                decoration: const InputDecoration(
+                                label: Text(" Enter Email ID"),
+                               ),
+                            ),
+                           ),
+                      
+                      const SizedBox(height: 10,),
+                      
+                      //MOBILE NUMBER
+                      const Text('  Mobile Number'),
+                      const SizedBox(height: 5,),
+                      Container(
+                        height: 45,
+                        width: 290,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(11),
+                          border: Border.all(
+                          color: Colors.black,
+                          width: 1,
+                          style: BorderStyle.solid,
+                          ),
+                          color: Colors.transparent,
+                        ),
+                        child: TextFormField(
+                                controller: controller,
+                                decoration: const InputDecoration(
+                                label: Text(" Enter Mobile Number"),
+                               ),
+                            ),
+                           ),
+                      
+                      const SizedBox(height: 20,),
+                      
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          //CONTAINER 1
+                          Container(
+                            height: 85,
+                            width: 120,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(11),
                               border: Border.all(
                                 color: Colors.black,
                                 width: 1,
                                 style: BorderStyle.solid,
+                              )
+                            ),
+                            child:  Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text('  Age',style: TextStyle(fontSize: 12),),
+                                  Center(
+                                    child: Container(
+                                      width: 120,
+                                      height: 60,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                      ),
+                                      child: TextFormField(
+                                            controller: controller,
+                                            decoration: InputDecoration(
+                                            label: Center(child: Text("Enter Age",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20, color: Colors.grey[500]),)),
+                                              ),
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              
                               ),
-                              color: Colors.transparent,
-                            ),
-                            child: TextFormField(
-                                    controller: controller,
-                                    decoration: const InputDecoration(
-                                    label: Text(" Enter User ID"),
-                                    ),
-                                  ),
-                          ),
-        
-                    const SizedBox(height: 10,),
-        
-                    //EMAIL
-                    const Text('  Email ID'),
-                    const SizedBox(height: 5,),
-                    Container(
-                      height: 45,
-                      width: 290,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(11),
-                        border: Border.all(
-                        color: Colors.black,
-                        width: 1,
-                        style: BorderStyle.solid,
-                        ),
-                        color: Colors.transparent,
-                      ),
-                      child: TextFormField(
-                              controller: controller,
-                              decoration: const InputDecoration(
-                              label: Text(" Enter Email ID"),
-                             ),
-                          ),
-                         ),
-        
-                    const SizedBox(height: 10,),
-        
-                    //MOBILE NUMBER
-                    const Text('  Mobile Number'),
-                    const SizedBox(height: 5,),
-                    Container(
-                      height: 45,
-                      width: 290,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(11),
-                        border: Border.all(
-                        color: Colors.black,
-                        width: 1,
-                        style: BorderStyle.solid,
-                        ),
-                        color: Colors.transparent,
-                      ),
-                      child: TextFormField(
-                              controller: controller,
-                              decoration: const InputDecoration(
-                              label: Text(" Enter Mobile Number"),
-                             ),
-                          ),
-                         ),
-        
-                    const SizedBox(height: 20,),
-                    
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        //CONTAINER 1
-                        Container(
-                          height: 85,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 1,
-                              style: BorderStyle.solid,
-                            )
-                          ),
-                          child:  Padding(
-                            padding: const EdgeInsets.all(3.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Text('  Age',style: TextStyle(fontSize: 12),),
-                                Center(
-                                  child: Container(
-                                    width: 120,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
-                                    ),
-                                    child: TextFormField(
-                                          controller: controller,
-                                          decoration: InputDecoration(
-                                          label: Center(child: Text("Enter Age",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20, color: Colors.grey[500]),)),
-                                            ),
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            
                             ),
                           ),
-                        ),
-        
-                        //CONTAINER 2
-                        Container(
-                          height: 85,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 1,
-                              style: BorderStyle.solid,
-                            )
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(3.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('  Blood Group',style: TextStyle(fontSize: 12),),
-                                Center(
-                                  child: Container(
-                                    width: 120,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(11),
+                      
+                          //CONTAINER 2
+                          Container(
+                            height: 85,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(11),
+                              border: Border.all(
+                                color: Colors.black,
+                                width: 1,
+                                style: BorderStyle.solid,
+                              )
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text('  Blood Group',style: TextStyle(fontSize: 12),),
+                                  Center(
+                                    child: Container(
+                                      width: 120,
+                                      height: 60,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(11),
+                                      ),
+                                      child: TextFormField(
+                                            controller: controller,
+                                            decoration: InputDecoration(
+                                            label: Center(child: Text("Enter Blood Group",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20,color: Colors.grey[500]),)),
+                                              ),
+                                          ),
                                     ),
-                                    child: TextFormField(
-                                          controller: controller,
-                                          decoration: InputDecoration(
-                                          label: Center(child: Text("Enter Blood Group",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20,color: Colors.grey[500]),)),
-                                            ),
-                                        ),
                                   ),
-                                ),
-                              ],
-                            
+                                ],
+                              
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    )      
-                  ],
+                        ],
+                      )      
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -352,7 +355,7 @@ class _UserProfileState extends State<UserProfile> {
               alignment: Alignment.center,
               children: [
 
-                Container(
+              Container(
               width: 344,
               height: 46,
               decoration: BoxDecoration(
